@@ -1,13 +1,21 @@
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 import PageHome from "../pages/PageHome"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function AppRouter() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<PageHome />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Header />
+        <div className="wrapper">
+        <main>
+            <Routes>
+                <Route path="/" element={<PageHome />} />
+            </Routes>
+        </main>
+        </div>
+        <Footer />
+        </BrowserRouter>
   )
 }
 
