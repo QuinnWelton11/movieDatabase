@@ -15,4 +15,17 @@ function getPopularMovies() {
     });
 }
 
-export { getPopularMovies, IMG_BASE };
+function getMovieById(id) {
+    return fetch(`${API_URL}/${id}?api_key=${API_KEY}`)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network Response Code was not OK")
+        }
+        return response.json()
+    })
+    .catch((error) => {
+        throw error;
+    });
+}
+
+export { getPopularMovies, getMovieById, IMG_BASE };
