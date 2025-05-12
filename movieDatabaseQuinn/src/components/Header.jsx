@@ -4,7 +4,7 @@ import "./header.css";
 function Header() {
   return (
     <header>
-        <span id="logo">Logo</span>
+        <span id="logo">🎬</span>
         <nav>
             <ul>
                 <li>

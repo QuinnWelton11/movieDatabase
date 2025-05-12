@@ -8,11 +8,9 @@ function AppRouter() {
       <BrowserRouter>
         <Header />
         <div className="wrapper">
-        <main>
             <Routes>
                 <Route path="/" element={<PageHome />} />
             </Routes>
-        </main>
         </div>
         <Footer />
         </BrowserRouter>
