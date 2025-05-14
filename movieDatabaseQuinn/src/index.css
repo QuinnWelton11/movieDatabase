@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0 auto;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -59,5 +63,10 @@ margin: 0 auto;
 
 main {
   min-height: 80vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
