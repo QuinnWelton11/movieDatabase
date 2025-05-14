@@ -3,6 +3,7 @@ import "./PageSingleMovie.css";
 import { getMovieById, IMG_BASE } from "../utilities/api";
 import { useParams } from "react-router-dom";
 import { formatDatePretty } from "../utilities/toolbelt";
+import FavoriteButton from "../components/FavoriteButton";
 
 function PageSingleMovie() {
 
@@ -32,7 +33,7 @@ function PageSingleMovie() {
             </div>
             <h1>{movieData.title}</h1>
             <h2>Release Date: {formatDatePretty(movieData.release_date)}</h2>
-            <button className="favorite-btn">❤</button>
+            <FavoriteButton movieData={movieData} />
         </>
     )}
   </main>

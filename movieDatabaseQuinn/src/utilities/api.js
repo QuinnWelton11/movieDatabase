@@ -15,6 +15,45 @@ function getPopularMovies() {
     });
 }
 
+function getNowPlaying() {
+    return fetch(`${API_URL}/now_playing?api_key=${API_KEY}`)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network Response Code was not OK")
+        }
+        return response.json()
+    })
+    .catch((error) => {
+        throw error;
+    });
+}
+
+function getTopRated() {
+    return fetch(`${API_URL}/top_rated?api_key=${API_KEY}`)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network Response Code was not OK")
+        }
+        return response.json()
+    })
+    .catch((error) => {
+        throw error;
+    });
+}
+
+function getUpcoming() {
+    return fetch(`${API_URL}/upcoming?api_key=${API_KEY}`)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network Response Code was not OK")
+        }
+        return response.json()
+    })
+    .catch((error) => {
+        throw error;
+    });
+}
+
 function getMovieById(id) {
     return fetch(`${API_URL}/${id}?api_key=${API_KEY}`)
     .then((response) => {
@@ -28,4 +67,4 @@ function getMovieById(id) {
     });
 }
 
-export { getPopularMovies, getMovieById, IMG_BASE };
+export { getPopularMovies, getMovieById, getNowPlaying, getTopRated, getUpcoming, IMG_BASE };

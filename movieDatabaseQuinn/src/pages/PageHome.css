@@ -1,5 +1,11 @@
 .movie-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(342px, 1fr));
-    gap: 1rem;
+    gap: .25rem;
 }
+
+main {
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
