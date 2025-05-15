@@ -68,8 +68,23 @@ function PageHome() {
             infinite: true,
             centerPadding: "60px",
             arrows: true,
+            dots: false,
             slidesToShow: 5,
             swipeToSlide: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 4,
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+            ],
             afterChange: function(index) {
             console.log(
                 `Slider Changed to: ${index + 1}, background: #222; color: #bada55`

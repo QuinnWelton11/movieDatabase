@@ -1,0 +1,23 @@
+.favorites-page {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.favorites-page h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.no-favorites {
+  font-size: 1rem;
+  color: #bbb;
+  margin-top: 1rem;
+}

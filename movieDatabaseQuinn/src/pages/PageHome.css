@@ -5,7 +5,56 @@
 }
 
 main {
-    max-width: 90vw;
+    max-width: 67.5rem;
+    padding: 1rem;
     margin: 0 auto;
 }
+
+/* Prevent arrow overflow */
+.slick-slider {
+  overflow: hidden;
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Optional: add breathing room for arrows */
+}
+
+/* Keep arrows inside */
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.slick-prev {
+  left: 0.5rem;
+}
+
+.slick-next {
+  right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .slick-slider {
+    padding: 0 0.5rem; /* Reduce padding on small screens */
+  }
+
+  .slick-prev,
+  .slick-next {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+}
+
 

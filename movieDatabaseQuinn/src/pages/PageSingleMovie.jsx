@@ -34,6 +34,7 @@ function PageSingleMovie() {
             <h1>{movieData.title}</h1>
             <h2>Release Date: {formatDatePretty(movieData.release_date)}</h2>
             <FavoriteButton movieData={movieData} />
+            <p>{movieData.overview}</p>
         </>
     )}
   </main>

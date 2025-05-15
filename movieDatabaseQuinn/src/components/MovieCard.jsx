@@ -17,7 +17,7 @@ function MovieCard({movieData}) {
               <span className="rating">
                   {movieData.vote_average.toFixed(1)}
               </span>
-              <FavoriteButton movieData={movieData} />
+              <p className="summary">{movieData.overview}</p>
           </div>
       </div>
   );

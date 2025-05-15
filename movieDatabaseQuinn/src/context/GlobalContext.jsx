@@ -1,35 +1,46 @@
-import { useState } from "react";
-import { createContext } from "react";
-
-
+import { useState, useEffect, createContext } from "react";
 
 const GlobalContext = createContext();
 
-function GlobalProvider({children}) {
-    const [favorites, setFavorites] = useState([]);
+function GlobalProvider({ children }) {
+  const [favorites, setFavorites] = useState([]);
 
-    // goals:
-    //ad a movie to favorites
-    //remove a movie from favorties
-    //detect if a movie is already favorited or not
-
-    function addToFavorites(movieData) {
-        // make a copy of favorites array and include the new movie data
-        setFavorites([...favorites, movieData]);
+  useEffect(() => {
+    const stored = localStorage.getItem("favorites");
+    if (stored) {
+      setFavorites(JSON.parse(stored));
     }
+  }, []);
 
-    function removeFromFavorites(id) {
-        const newFavorites = favorites.filter((movie) => {
-            return movie.id !== id;
-        })
-        setFavorites(newFavorites);
-    }
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
-    function isFavorite(id) {
-        return favorites.some((movie) => movie.id === id);
-    }
+  function addToFavorites(movieData) {
+    setFavorites([...favorites, movieData]);
+  }
 
-    return <GlobalContext.Provider value={{favorites, addToFavorites, removeFromFavorites, isFavorite}}>{children}</GlobalContext.Provider>
+  function removeFromFavorites(id) {
+    const newFavorites = favorites.filter((movie) => movie.id !== id);
+    setFavorites(newFavorites);
+  }
+
+  function isFavorite(id) {
+    return favorites.some((movie) => movie.id === id);
+  }
+
+  return (
+    <GlobalContext.Provider
+      value={{
+        favorites,
+        addToFavorites,
+        removeFromFavorites,
+        isFavorite,
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
 }
 
-export {GlobalContext, GlobalProvider};
+export { GlobalContext, GlobalProvider };
