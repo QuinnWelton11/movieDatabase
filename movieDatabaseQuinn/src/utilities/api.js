@@ -67,4 +67,18 @@ function getMovieById(id) {
     });
 }
 
-export { getPopularMovies, getMovieById, getNowPlaying, getTopRated, getUpcoming, IMG_BASE };
+function getCredits(movieId) {
+    return fetch(`${API_URL}/${movieId}/credits?api_key=${API_KEY}`)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network Response Code was not OK")
+        }
+        return response.json()
+    })
+    .catch((error) => {
+        throw error;
+    });
+}
+
+
+export { getPopularMovies, getMovieById, getNowPlaying, getTopRated, getUpcoming, getCredits, IMG_BASE };
