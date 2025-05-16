@@ -5,7 +5,6 @@
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    /* box-shadow: 3px 5px 16px 4px rgba(0, 0, 0, 0.37); */
 }
 
 .movie-card .poster {
@@ -19,12 +18,12 @@
 
 .movie-card .backdrop {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   right: 0;
   padding: 0.75rem;
   backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.6); /* fallback for browsers without blur */
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   z-index: 1;
   border-bottom-left-radius: 10px;
@@ -33,7 +32,6 @@
   flex-direction: column;
   justify-content: flex-end;
   gap: 0.3rem;
-  height: 100%;
   box-sizing: border-box;
   opacity: 0;
 }

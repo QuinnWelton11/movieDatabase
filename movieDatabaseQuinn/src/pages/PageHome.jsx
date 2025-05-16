@@ -1,144 +1,133 @@
-import { useEffect } from "react"
-import { useState } from "react"
-import { getPopularMovies, getNowPlaying, getTopRated, getUpcoming } from "../utilities/api"
+import { useEffect } from "react";
+import { useState } from "react";
+import {
+  getPopularMovies,
+  getNowPlaying,
+  getTopRated,
+  getUpcoming,
+} from "../utilities/api";
 import MovieCard from "../components/MovieCard";
-import "./PageHome.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css";
+import "./PageHome.css";
 
 function PageHome() {
+  const [popularMovies, setPopularMovies] = useState([]);
 
-    const [popularMovies, setPopularMovies] = useState([])
+  const [nowPlaying, setNowPlaying] = useState([]);
 
-    const [nowPlaying, setNowPlaying] = useState([])
+  const [topRated, setTopRated] = useState([]);
 
-    const [topRated, setTopRated] = useState([]);
-    
-    const [upcoming, setUpcoming] = useState([]);
+  const [upcoming, setUpcoming] = useState([]);
 
-    useEffect(() => {
-        getPopularMovies()
-        .then((data) => {
-            console.log(data);
-            setPopularMovies(data.results);
-        })
-        .catch((error) => {
-            alert(error)
-        });
-    }, []);
+  useEffect(() => {
+    getPopularMovies()
+      .then((data) => {
+        console.log(data);
+        setPopularMovies(data.results);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }, []);
 
-    useEffect(() => {
-        getNowPlaying()
-        .then((data) => {
-            console.log(data);
-            setNowPlaying(data.results);
-        })
-        .catch((error) => {
-            alert(error)
-        });
-    }, []);
+  useEffect(() => {
+    getNowPlaying()
+      .then((data) => {
+        console.log(data);
+        setNowPlaying(data.results);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }, []);
 
-    useEffect(() => {
-        getTopRated()
-        .then((data) => {
-            console.log(data);
-            setTopRated(data.results);
-        })
-        .catch((error) => {
-            alert(error)
-        });
-    }, []);
+  useEffect(() => {
+    getTopRated()
+      .then((data) => {
+        console.log(data);
+        setTopRated(data.results);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }, []);
 
-    useEffect(() => {
-        getUpcoming()
-        .then((data) => {
-            console.log(data);
-            setUpcoming(data.results);
-        })
-        .catch((error) => {
-            alert(error)
-        });
-    }, []);
-    
-    
-        const settings = {
+  useEffect(() => {
+    getUpcoming()
+      .then((data) => {
+        console.log(data);
+        setUpcoming(data.results);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }, []);
 
-            className: "center",
-            infinite: true,
-            centerPadding: "60px",
-            arrows: true,
-            dots: false,
-            slidesToShow: 5,
-            swipeToSlide: true,
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 4,
-                    },
-                },
-                {
-                    breakpoint: 568,
-                    settings: {
-                        slidesToShow: 3,
-                    },
-                },
-                {
-                    breakpoint: 420,
-                    settings: {
-                        slidesToShow: 2,
-                    },
-                },
-            ],
-            afterChange: function(index) {
-            console.log(
-                `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-            );
-            }
+  const settings = {
+    infinite: true,
+    centerMode: true,
+    centerPadding: "10px",
+    arrows: true,
+    dots: true,
+    slidesToShow: 1,
+    variableWidth: true,
+    swipeToSlide: true,
+    afterChange: function (index) {
+      console.log(
+        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+      );
+    },
+  };
 
-        };
- 
   return (
     <main id="home">
-        <h2>Popular Movies</h2>
+      <h2>Popular Movies</h2>
+      <div className="slider-section">
         <Slider {...settings}>
-            {popularMovies.map((movieData) => (
-                <div key={movieData.id} className="movie-cards popular">
-                    <MovieCard movieData={movieData} />
-                </div>
-            ))}
+          {popularMovies.map((movieData) => (
+            <div key={movieData.id} className="movie-cards popular">
+              <MovieCard movieData={movieData} />
+            </div>
+          ))}
         </Slider>
+      </div>
 
-        <h2>Now Playing</h2>
+      <h2>Now Playing</h2>
+      <div className="slider-section">
         <Slider {...settings}>
-            {nowPlaying.map((movieData) => (
-                <div key={movieData.id} className="movie-cards nowplaying">
-                    <MovieCard movieData={movieData} />
-                </div>
-            ))}
+          {nowPlaying.map((movieData) => (
+            <div key={movieData.id} className="movie-cards nowplaying">
+              <MovieCard movieData={movieData} />
+            </div>
+          ))}
         </Slider>
+      </div>
 
-        <h2>Top Rated</h2>
+      <h2>Top Rated</h2>
+      <div className="slider-section">
         <Slider {...settings}>
-            {topRated.map((movieData) => (
-                <div key={movieData.id} className="movie-cards toprated">
-                    <MovieCard movieData={movieData} />
-                </div>
-            ))}
+          {topRated.map((movieData) => (
+            <div key={movieData.id} className="movie-cards toprated">
+              <MovieCard movieData={movieData} />
+            </div>
+          ))}
         </Slider>
+      </div>
 
-        <h2>Upcoming</h2>
+      <h2>Upcoming</h2>
+      <div className="slider-section">
         <Slider {...settings}>
-            {upcoming.map((movieData) => (
-                <div key={movieData.id} className="movie-cards toprated">
-                    <MovieCard movieData={movieData} />
-                </div>
-            ))}
+          {upcoming.map((movieData) => (
+            <div key={movieData.id} className="movie-cards toprated">
+              <MovieCard movieData={movieData} />
+            </div>
+          ))}
         </Slider>
-      
+      </div>
     </main>
   );
 }
 
-export default PageHome
+export default PageHome;

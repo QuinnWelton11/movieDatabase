@@ -1,0 +1,73 @@
+.footer {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  color: #ffffffcc;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tag-line {
+  display: none;
+}
+
+.footer-center {
+  display: none;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-left p {
+  margin: 0.2rem 0;
+}
+
+.footer-link {
+  color: #ffffffcc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffcc00;
+}
+
+.footer-right .tmdb-logo {
+  height: 24px;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.footer-right .tmdb-logo:hover {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footer-center {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .tag-line {
+    display: block;
+  }
+}
