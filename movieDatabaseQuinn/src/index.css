@@ -29,6 +29,8 @@ body {
 }
 
 body {
+  /* background animation made with help from https://www.w3schools.com/css/css3_animations.asp
+  and https://www.youtube.com/watch?v=C9Rbmsnb-dk&ab_channel=HowtoWebDev */
   margin: 0;
   padding: 0;
   height: 100%;
@@ -86,11 +88,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-/* .wrapper {
-max-width: 1200px;
-margin: 0 auto;
-} */
 
 main {
   min-height: 80vh;
