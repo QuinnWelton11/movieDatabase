@@ -1,19 +1,19 @@
 .movie-card {
-    position: relative;
-    width: 125px;
-    height: 225px;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
+  position: relative;
+  width: 125px;
+  height: 225px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .movie-card .poster {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* z-index: -1; */
 }
 
 .movie-card .backdrop {
@@ -36,7 +36,6 @@
   opacity: 0;
 }
 
-
 .movie-card h2 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -45,7 +44,7 @@
 }
 
 .movie-card h3 {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 400;
   margin: 0;
   opacity: 0.85;
@@ -60,7 +59,7 @@
 }
 
 .movie-card .summary {
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.2;
   color: #ddd;
   margin-top: 0.25rem;
@@ -71,26 +70,25 @@
   -webkit-box-orient: vertical;
 }
 
-
 .movie-card .backdrop:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .backdrop {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .summary {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 @media (min-width: 1024px) {
-    .movie-card {
-        width: 170px;
-        height: 270px;
-    }
+  .movie-card {
+    width: 170px;
+    height: 270px;
+  }
 }

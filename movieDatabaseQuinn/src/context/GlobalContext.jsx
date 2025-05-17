@@ -17,7 +17,9 @@ function GlobalProvider({ children }) {
   }, [favorites]);
 
   function addToFavorites(movieData) {
-    setFavorites([...favorites, movieData]);
+    if (!favorites.some((movie) => movie.id === movieData.id)) {
+      setFavorites([...favorites, movieData]);
+    }
   }
 
   function removeFromFavorites(id) {
