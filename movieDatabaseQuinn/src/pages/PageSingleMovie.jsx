@@ -68,25 +68,26 @@ function PageSingleMovie() {
           <p>{movieData.overview}</p>
 
           <h2>Cast</h2>
-          <div className="castSlider">
-            {/* Used AI to help me understand how to access the cast info via the TMDB API */}
-            <Slider {...sliderSettings}>
-              {credits.cast.slice(0, 10).map((actor) => (
-                <div key={actor.id} className="credit-card">
-                  <img
-                    src={
-                      actor.profile_path
-                        ? `https://image.tmdb.org/t/p/w185${actor.profile_path}`
-                        : "https://via.placeholder.com/185x278?text=No+Image"
-                    }
-                    alt={actor.name}
-                  />
-                  <p className="name">{actor.name}</p>
-                  <p className="role">{actor.character}</p>
-                </div>
-              ))}
-            </Slider>
-          </div>
+          {credits && credits.cast && (
+            <div className="castSlider">
+              <Slider {...sliderSettings}>
+                {credits.cast.slice(0, 10).map((actor) => (
+                  <div key={actor.id} className="credit-card">
+                    <img
+                      src={
+                        actor.profile_path
+                          ? `https://image.tmdb.org/t/p/w185${actor.profile_path}`
+                          : "https://via.placeholder.com/185x278?text=No+Image"
+                      }
+                      alt={actor.name}
+                    />
+                    <p className="name">{actor.name}</p>
+                    <p className="role">{actor.character}</p>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          )}
         </>
       )}
     </main>

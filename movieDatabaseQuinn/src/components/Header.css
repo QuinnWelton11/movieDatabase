@@ -4,6 +4,11 @@
   /* width: 95%; */
   padding: 0.5rem 1rem;
   background-color: #4f8cff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
 }
 
 .header-inner {
