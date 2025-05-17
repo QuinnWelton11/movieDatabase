@@ -12,7 +12,8 @@ main {
   margin-top: 5rem;
 }
 
-main h2 {
+main h2,
+main h1 {
   padding: 0.25rem 1rem;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.45);
 }

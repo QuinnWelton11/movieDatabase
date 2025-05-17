@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./header.css";
 import { useState } from "react";
 import { Sling as Hamburger } from "hamburger-react";
+import PageHome from "../pages/PageHome";
 
 function Header() {
   const [isOpen, setOpen] = useState(false);
@@ -10,7 +11,9 @@ function Header() {
     <div className="header-bar">
       <div className="header-inner">
         <div className="header-logo">
-          <a href="/">🎬</a>
+          <a href="/" element={<PageHome />}>
+            🎬
+          </a>
         </div>
         <div className="header-center"></div>
         <div className="header-toggle">

@@ -1,3 +1,8 @@
+#single-movie-page p {
+  max-width: 1080px;
+  padding: 1rem;
+}
+
 .backdrop-container {
   position: relative;
   width: 100%;
