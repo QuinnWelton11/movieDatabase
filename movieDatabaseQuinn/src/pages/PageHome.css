@@ -33,7 +33,7 @@ main h2 {
   position: relative;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
 }
 
 .slick-list {
@@ -54,7 +54,7 @@ main h2 {
   font-size: 0;
   line-height: 0;
   position: absolute;
-  top: 92%;
+  top: 95%;
   transform: translate(0, -50%);
   width: 25px;
   height: 25px;
@@ -86,7 +86,7 @@ main h2 {
   transform: translateX(-50%);
   max-width: 80%;
   width: 100%;
-  padding: 0.5rem 0;
+  padding: 0rem 0;
   display: flex !important;
   justify-content: center;
   gap: 0.25rem;

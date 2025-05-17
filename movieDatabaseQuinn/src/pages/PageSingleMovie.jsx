@@ -23,6 +23,7 @@ function PageSingleMovie() {
         alert(error);
       });
     getCredits(id)
+      // copied from the getMovieById and modified for cast slider
       .then((data) => {
         console.log("Credits:", data);
         setCredits(data);
@@ -34,10 +35,11 @@ function PageSingleMovie() {
   }, [id]);
 
   const sliderSettings = {
+    // used react-slick for movie sliders
     infinite: false,
     speed: 500,
     slidesToShow: 3,
-    dots: true,
+    dots: false,
     arrows: true,
     responsive: [
       {
@@ -67,6 +69,7 @@ function PageSingleMovie() {
 
           <h2>Cast</h2>
           <div className="castSlider">
+            {/* Used AI to help me understand how to access the cast info via the TMDB API */}
             <Slider {...sliderSettings}>
               {credits.cast.slice(0, 10).map((actor) => (
                 <div key={actor.id} className="credit-card">

@@ -11,6 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./PageHome.css";
+import HeroSlideshow from "../components/HeroSlideshow";
 
 function PageHome() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -74,6 +75,14 @@ function PageHome() {
     slidesToShow: 1,
     variableWidth: true,
     swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
     afterChange: function (index) {
       console.log(
         `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
@@ -83,6 +92,8 @@ function PageHome() {
 
   return (
     <main id="home">
+      <HeroSlideshow />
+
       <h2>Popular Movies</h2>
       <div className="slider-section">
         <Slider {...settings}>
