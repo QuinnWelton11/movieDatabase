@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./header.css";
+import "./Header.css";
 import { useState } from "react";
 import { Sling as Hamburger } from "hamburger-react";
 import PageHome from "../pages/PageHome";

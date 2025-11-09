@@ -9,7 +9,7 @@ import PageFavorites from "../pages/PageFavorites";
 
 function AppRouter() {
   return (
-    <BrowserRouter basename="/movie-database">
+    <BrowserRouter basename="/movieDatabase">
       <GlobalProvider>
         <Header />
         <div className="wrapper">
